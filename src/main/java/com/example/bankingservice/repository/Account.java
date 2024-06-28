@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "accounts")
-public class Accounts {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,6 @@ public class Accounts {
     private Double initialBalance; // начальная сумма
 
     @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id") //Указывает, что данное поле является внешним ключом, ссылающимся на поле id другой таблицы.
     private User user;
 }

@@ -1,7 +1,6 @@
 package com.example.bankingservice.repository;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity
