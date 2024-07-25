@@ -1,80 +1,47 @@
 package com.example.bankingservice.repository;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(unique = true, nullable = false)
-    private String username;
-    @Column(nullable = false)
+    @Column(name = "id_user")
+    private Long idUser;
+
+    @Column(name = "login")
+    private String login;
+
+    @Column(name = "password")
     private String password;
-    @Column(nullable = false)
-    private String fullName;
-    @Column(unique = true)
-    private String phone;
-    @Column(unique = true)
+
+    @Column(name = "initial_sum")
+    private int initialSum;
+
+    @Column(name = "telephone")
+    private int telephone;
+
+    @Column(name = "email")
     private String email;
-    @Column(nullable = false)
-    private LocalDate birthDate;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "date_of_birth")
+    @Temporal(TemporalType.DATE)
+    private Date dateOfBirth;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "first_name")
+    private String firstName;
 
-    public String getUsername() {
-        return username;
-    }
+    @Column(name = "last_name")
+    private String lastName;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    @Column(name = "surname")
+    private String surName;
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
 }
