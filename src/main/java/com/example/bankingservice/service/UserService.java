@@ -1,6 +1,6 @@
 package com.example.bankingservice.service;
 
-import com.example.bankingservice.model.UserDto;
+import com.example.bankingservice.repository.User;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -8,5 +8,5 @@ import java.util.Optional;
 @Service
 public interface UserService {
 
-    public Optional createUsers(UserDto userDto);
+    public Optional createUsers(User userDto);
 }
