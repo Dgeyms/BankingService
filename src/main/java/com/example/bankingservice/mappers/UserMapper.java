@@ -7,7 +7,6 @@ public class UserMapper {
 
     public static User toEntity(UserDto userDto) {
         User user = new User();
-        user.setIdUser(user.getIdUser());
         user.setLogin(userDto.getLogin());
         user.setPassword(userDto.getPassword());
         user.setInitialSum(userDto.getInitialSum());
