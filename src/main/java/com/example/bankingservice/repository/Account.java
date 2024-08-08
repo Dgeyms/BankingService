@@ -1,22 +1,26 @@
 package com.example.bankingservice.repository;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "account")
+@Getter
+@Setter
 public class Account {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="account_id")
+    private Long accountId;
 
-    @Column(nullable = false)
-    private Double balance;
+    @Column(name="balance")
+    private double balanceUser;
 
-    @Column(nullable = false)
-    private Double initialBalance; // начальная сумма
+    @Column(name="initial_sum")
+    private double initialSum;// начальная сумма
 
-    @OneToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id") //Указывает, что данное поле является внешним ключом, ссылающимся на поле id другой таблицы.
-    private User user;
+    @Column(name="id_user")
+    private Long idUser;
+
 }

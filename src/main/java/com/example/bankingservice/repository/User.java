@@ -23,7 +23,7 @@ public class User {
     private String password;
 
     @Column(name = "initial_sum")
-    private int initialSum = 1;
+    private double initialSum;
 
     @Column(name = "telephone")
     private String telephone;

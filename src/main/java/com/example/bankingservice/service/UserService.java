@@ -8,5 +8,5 @@ import java.util.Optional;
 @Service
 public interface UserService {
 
-    public Optional createUsers(User userDto);
+    public Optional createUsers(User user);
 }

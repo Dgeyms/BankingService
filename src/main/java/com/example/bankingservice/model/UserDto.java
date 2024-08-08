@@ -20,7 +20,7 @@ public class UserDto {
     private String password;
 
     @Positive(message = "Initial sum must be positive")
-    private int initialSum;
+    private double initialSum;
 
     @Size(min = 10, max = 10, message = "Telephone number must be between 10 characters")
     private String telephone;
